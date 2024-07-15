@@ -7,7 +7,7 @@ function App() {
   const [individualSummaries, setIndividualSummaries] = useState([]);
   const [overallSummary, setOverallSummary] = useState('');
   const [downloadUrl, setDownloadUrl] = useState('');
-  const API_URL = 'https://cryptic-river-09912.herokuapp.com'
+  const API_URL = 'https://cryptic-river-09912-5077bfa01186.herokuapp.com/'
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
