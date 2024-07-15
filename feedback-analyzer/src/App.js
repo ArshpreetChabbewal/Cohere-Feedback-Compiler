@@ -29,7 +29,7 @@ function App() {
 
       setIndividualSummaries(response.data.individual_summaries);
       setOverallSummary(response.data.overall_summary);
-      setDownloadUrl(`http://localhost:5000/${response.data.download_url}`);
+      setDownloadUrl(`${process.env.API_URL}/${response.data.download_url}`);
     } catch (error) {
       console.error('Error summarizing feedback:', error);
     }
