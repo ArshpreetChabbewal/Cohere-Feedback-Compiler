@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function App() {
+  console.log('Hello!')
   const [file, setFile] = useState(null);
   const [individualSummaries, setIndividualSummaries] = useState([]);
   const [overallSummary, setOverallSummary] = useState('');
