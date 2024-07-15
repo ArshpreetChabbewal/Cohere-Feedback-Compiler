@@ -6,6 +6,7 @@ function App() {
   const [individualSummaries, setIndividualSummaries] = useState([]);
   const [overallSummary, setOverallSummary] = useState('');
   const [downloadUrl, setDownloadUrl] = useState('');
+  const API_URL = 'http://cryptic-river-09912.herokuapp.com'
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
@@ -21,7 +22,7 @@ function App() {
     formData.append('file', file);
 
     try {
-      const response = await axios.post(`${process.env.API_URL}/summarize`, formData, {
+      const response = await axios.post(`${API_URL}/summarize`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -29,7 +30,7 @@ function App() {
 
       setIndividualSummaries(response.data.individual_summaries);
       setOverallSummary(response.data.overall_summary);
-      setDownloadUrl(`${process.env.API_URL}/${response.data.download_url}`);
+      setDownloadUrl(`${API_URL}/${response.data.download_url}`);
     } catch (error) {
       console.error('Error summarizing feedback:', error);
     }
